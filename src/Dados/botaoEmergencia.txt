@@ -1,0 +1,20 @@
+Disque Direitos Humanos,100
+Polícia Militar,112/911
+Conselhos Tutelares,125
+Ministério da Cidadania - Atendimento a Dependentes Químicos,132
+Guarda Municipal,153
+Central de Atendimento à Mulher,180
+Disque Denúncia,181
+Marinha,185
+Linha da Vida,188
+Polícia Militar,190
+Polícia Rodoviária Federal,191
+Serviço de Atendimento Médico de Urgência -SAMU,192
+Corpo de Bombeiros,193
+Polícia Federal,194
+SABESP (Somente Estado de São Paulo),195
+Ministério da Saúde - Apoio COVID-19,196
+Polícia Civil,197
+Polícia Rodoviária Estadual,198
+Defesa Civil,199
+

@@ -1,0 +1,3 @@
+Teste,0,teste,100
+Kaíke,1234,Lime,18,75.0,180,Ectomorfo,Masculino
+Clodoaldo,socafofo,Clodoaldo,17,75.0,210,Ectomorfo,Feminino

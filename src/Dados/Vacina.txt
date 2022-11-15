@@ -1,0 +1,8 @@
+Hepatite B recombinante,3,11
+Difteria e Tétano (dT),3,11
+Febre amarela (Atenuada),1,11
+Sarampo, Caxumba e Rubéola (SCR) (1) (2),2,11
+Papilomavírus humano(HPV) (3),2,9
+Pneumocócica 23-valente (PPV 23) (4),2,11
+Meningocócica ACWY (Conjugada),1,11
+
