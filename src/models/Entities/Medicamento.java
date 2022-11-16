@@ -97,13 +97,15 @@ public class Medicamento {
 
         list.add(new Medicamento(nome, quantidadeDoses, dates));
 
-        String path = ("C:\\Users\\limeh\\Documents\\Projetos\\NetBeans\\JavaTde\\JavaApplication18\\src\\Dados\\MedicamentoUsuario.txt");
+        String path = ("src\\Dados\\MedicamentoUsuario.txt");
 
         try ( BufferedWriter bw = new BufferedWriter(new FileWriter(path, true))) {
             String line = null;
 
             for (Medicamento medica : list) {
-                line = medica.getName() + "," + medica.getQuantidade() + "," + medica.getDatas();
+                if (medica.getName() != null || medica.getName() != "") {
+                    line = medica.getName() + "," + medica.getQuantidade() + "," + medica.getDatas();
+                }
             }
 
             bw.write(line);
@@ -115,13 +117,15 @@ public class Medicamento {
 
     }
 
+    /*
     public String listaMedicamentos() {
 
         List<Medicamento> list = new ArrayList<>();
 
         String todosMed = "";
 
-        String path = ("C:\\Users\\limeh\\Documents\\Projetos\\NetBeans\\JavaTde\\JavaApplication18\\src\\Dados\\MedicamentoUsuario.txt");
+        //String path = ("C:\\Users\\limeh\\Documents\\Projetos\\NetBeans\\JavaTde\\JavaApplication18\\src\\Dados\\MedicamentoUsuario.txt");
+        String path = ("src\\Dados\\MedicamentoUsuario.txt");
 
         try ( BufferedReader br = new BufferedReader(new FileReader(path))) {
 
@@ -131,13 +135,13 @@ public class Medicamento {
                 itemCsv = br.readLine();
             }
 
+            String nome = "";
+            Integer qnt = null;
+            String datas = "";
+
             while (itemCsv != null) {
 
                 String[] fields = itemCsv.split(",");
-
-                String nome = "";
-                Integer qnt = 0;
-                String datas = "";
 
                 for (int i = 0; i < fields.length; i++) {
                     if (i == 0) {
@@ -189,6 +193,95 @@ public class Medicamento {
         return todosMed;
     }
 
+*/
+    
+    public String listaMedicamentos() {
+
+        List<Medicamento> list = new ArrayList<>();
+
+        String todosMed = "";
+
+        String path = ("src\\Dados\\MedicamentoUsuario.txt");
+
+        try ( BufferedReader br = new BufferedReader(new FileReader(path))) {
+
+            String itemCsv = br.readLine();
+
+            if (itemCsv == null) {
+                itemCsv = br.readLine();
+            }
+
+            while (itemCsv != null) {
+
+                String[] fields = itemCsv.split(",");
+
+                String nome = "";
+                Integer qnt = 0;
+                String datas = "";
+
+                for (int i = 0; i < fields.length; i++) {
+                    if (i == 0) {
+                        nome = fields[0];
+                    }
+                    if (i == 1) {
+                        qnt = Integer.parseInt(fields[1]);
+                    }
+                    if (i == 2) {
+                        if (fields[2] != null) {
+                            datas += " " + fields[2];
+                        }
+                    }
+                    if (i == 3 && fields[3] != null) {
+
+                        datas += " | " + fields[3];
+
+                    }
+                    if (i == 4 && fields[4] != null) {
+
+                        datas += " | " + fields[4];
+
+                    }
+                    if (i == 5 && fields[5] != null) {
+                        datas += " | " + fields[5];
+
+                    }
+                    if (i == 6 && fields[6] != null) {
+                        datas += " | " + fields[6];
+
+                    }
+                    if (i == 7 && fields[7] != null) {
+                        datas += " | " + fields[7];
+
+                    }
+                    if (i == 6 && fields[6] != null) {
+                        datas += " | " + fields[7];
+
+                    }
+
+                }
+
+                list.add(new Medicamento(nome, qnt, datas));
+                itemCsv = br.readLine();
+
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        list.remove(0);
+        todosMed = "Medicamentos: " + "\n";
+        for (Medicamento medicamento : list) {
+            todosMed += medicamento.toString() + "\n";
+
+        }
+
+        return todosMed;
+    }
+    
+    
     public void abrirPdf() {
         Desktop desktop = Desktop.getDesktop();
         try {

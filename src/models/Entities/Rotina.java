@@ -66,13 +66,14 @@ public class Rotina {
         String data = sdf.format(date);
 
         list.add(new Rotina(nome, data));
-        String path = ("C:\\Users\\limeh\\Documents\\Projetos\\NetBeans\\JavaTde\\JavaApplication18\\src\\Dados\\Rotina.txt");
+        String path = ("src\\Dados\\Rotina.txt");
 
         try ( BufferedWriter bw = new BufferedWriter(new FileWriter(path, true))) {
             String line = null;
 
             for (Rotina rot : list) {
-                line = rot.toString();
+                if(rot.getNome() != null || rot.getNome() != "")
+                line = rot.getNome() + "," + rot.getData();
             }
 
             bw.write(line);
@@ -84,14 +85,17 @@ public class Rotina {
 
     }
 
+    /*
     public String listaRotina() {
 
         List<Rotina> list = new ArrayList<>();
 
         String rotina = "";
 
-        String path = ("C:\\Users\\limeh\\Documents\\Projetos\\NetBeans\\JavaTde\\JavaApplication18\\src\\Dados\\Rotina.txt");
+        //String path = ("C:\\Users\\limeh\\Documents\\Projetos\\NetBeans\\JavaTde\\JavaApplication18\\src\\Dados\\Rotina.txt");
 
+        String path = ("src\\Dados\\Rotina.txt");
+        
         try ( BufferedReader br = new BufferedReader(new FileReader(path))) {
 
             String itemCsv = br.readLine();
@@ -135,7 +139,65 @@ public class Rotina {
 
         return rotina;
     }
+    */
+    
+    public String listaRotina() {
 
+        List<Rotina> list = new ArrayList<>();
+
+        String rotina = "";
+
+        //String path = ("C:\\Users\\limeh\\Documents\\Projetos\\NetBeans\\JavaTde\\JavaApplication18\\src\\Dados\\Rotina.txt");
+
+        String path = ("src\\Dados\\Rotina.txt");
+        
+        try ( BufferedReader br = new BufferedReader(new FileReader(path))) {
+
+            String itemCsv = br.readLine();
+
+            if (itemCsv == null) {
+                itemCsv = br.readLine();
+            }
+
+            
+            
+            while (itemCsv != null) {
+
+                String[] fields = itemCsv.split(",");
+
+                String nome = "";
+                String data = "";
+                
+                for (int i = 0; i < fields.length; i++) {
+                    if (i == 0 ) {
+                        nome = fields[0];
+                    }
+                    if (i == 1 ) {
+                        data = fields[1];
+                    }
+                }
+
+                list.add(new Rotina(nome, data));
+                itemCsv = br.readLine();
+
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        list.remove(0);
+        rotina = "Seus Apontamentos: " + "\n";
+        for (Rotina rot : list) {
+            rotina += rot.toString() + "\n";
+
+        }
+
+        return rotina;
+    }
+    
     public Date adicionaHoras(Date data, int horas) {
         Calendar calendario = Calendar.getInstance(); // Cria um objeto de data
         calendario.setTime(data); // Inicia o objeto com a data original

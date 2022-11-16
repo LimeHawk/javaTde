@@ -163,8 +163,9 @@ public class User {
             throw new RuntimeException("Unexpected error! One of the variavles is null ");
         }
 
-        String path = ("C:\\Users\\limeh\\Documents\\Projetos\\NetBeans\\JavaTde\\JavaApplication18\\src\\Dados\\Bd.txt");
-
+        //String path = ("C:\\Users\\limeh\\Documents\\Projetos\\NetBeans\\JavaTde\\JavaApplication18\\src\\Dados\\Bd.txt");
+        String path = ("src\\Dados\\Bd.txt");
+        
         try ( BufferedWriter bw = new BufferedWriter(new FileWriter(path, true))) {
             String line = user.getNome() + "," + user.getSenha() + "," + user.getLogin() + "," + user.getIdade() + "," + user.getPeso() + "," + user.getAltura() + "," + user.getBiotipo() + "," + user.getSexo();
 
@@ -181,8 +182,9 @@ public class User {
         String cad = JOptionPane.showInputDialog("Login: ");
         String sen = JOptionPane.showInputDialog("Senha: ");
 
-        String path = ("C:\\Users\\limeh\\Documents\\Projetos\\NetBeans\\JavaTde\\JavaApplication18\\src\\Dados\\Bd.txt");
-
+        //String path = ("C:\\Users\\limeh\\Documents\\Projetos\\NetBeans\\JavaTde\\JavaApplication18\\src\\Dados\\Bd.txt");
+        String path = ("src\\Dados\\Bd.txt");
+        
         try ( BufferedReader br = new BufferedReader(new FileReader(path))) {
 
             String itemCsv = br.readLine();

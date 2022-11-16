@@ -56,9 +56,29 @@ public class Program {
 
         while (menu == 1) {
 
-            int option = Integer.parseInt(JOptionPane.showInputDialog("__________[ OWNCARE 💊]__________\n\n Usuário: " + usuario.getNome() + "\n\n 1- Vacina \n 2- Fitness \n 3- Medicamento \n 4- Rotina \n 5- Intruções OwnCare \n 6- ⚠Emergência️⚠\n --Digite outro número para sair--"));
+            int option = Integer.parseInt(JOptionPane.showInputDialog("__________[ OWNCARE 💊]__________\n\n Usuário: " + usuario.getNome() + "\n\n 0- Intruções OwnCare \n 1- Vacina \n 2- Fitness \n 3- Medicamento \n 4- Rotina \n 5- ⚠Emergência️⚠\n\n --Digite outro número para sair--"));
 
             switch (option) {
+                case 0:
+                    JOptionPane.showMessageDialog(null, "Intruções OwnCare: \n\n"
+                            + "VACINA:\n"
+                            + "-Lista todas as vacinas, com base no site do SUS, que uma criança, adolescente ou adulto, devem tomar.\n\n"
+                            + "FITNESS:\n"
+                            + "-Mostra o consumo diário de água de acordo com o seu peso;\n"
+                            + "-Mostra uma biblioteca nutricional com base no seu tipo de biotipo (Ectomorfo, Mesomorfo, Endomorfo);\n"
+                            + "-Prediz a quantidade de calorias você deve comer, incluindo a Taxa Metabólica Basal (TMB), que calcula o tanto de energia seu corpo consome em pleno funcionamento em vida. Além da manipulação percentual dos macronutrientes com base no biotipo;\n"
+                            + "-Meta calórica apresenta uma meta diária de calorias que devem ser consumidas, com base no seu biotipo.\n\n"
+                            + "MEDICAMENTO:\n"
+                            + "-Cadastra o medicamento que o usuário desejar;\n"
+                            + "-Lista os medicamentos cadastrados;\n"
+                            + "-Abre o arquivo RENAME do SUS para checagem da disponibilidade do medicamento de forma gratuita pelo Governo;\n\n"
+                            + "ROTINA:\n"
+                            + "-Cadastra a rotina que o usuário desejar;\n"
+                            + "-Lista as rotinas cadastradas;\n\n"
+                            + "EMERGÊNCIA:\n"
+                            + "-Lista todos os possíveis números de emergência mais utilizados");
+                            break;
+                
                 case 1:
                     option = Integer.parseInt(JOptionPane.showInputDialog("__________[ OWNCARE 💊]__________ \n 1- Listar possivaies vacinas para serem tomadas"));
                     if (option == 1) {
@@ -68,7 +88,7 @@ public class Program {
 
                 case 2:
                     while (option != 5) {
-                        option = Integer.parseInt(JOptionPane.showInputDialog("__________[ OWNCARE 💊]__________ \n 1- Consumo de Água ideal por dia\n 2- Sua Biblioteca Nutricional \n 3- Predições baseados no seu consumo Diario \n 4- Meta Calorica \n 5- Retornar"));
+                        option = Integer.parseInt(JOptionPane.showInputDialog("__________[ OWNCARE 💊]__________ \n \n 1- Consumo de Água ideal por dia\n 2- Sua Biblioteca Nutricional \n 3- Predições baseados no seu consumo Diario \n 4- Meta Calorica \n 5- Retornar"));
                         if (option == 1) {
                             JOptionPane.showMessageDialog(null, fit.ConsumoAgua(usuario));
                         }
@@ -90,7 +110,7 @@ public class Program {
                 case 3:
                     while (option != 5) {
 
-                        option = Integer.parseInt(JOptionPane.showInputDialog("__________[ OWNCARE 💊]__________ \n 1- Cadastrar medicamento\n 2- Listar seus medicamentos \n 3- Abrir pdf Rename \n 4- Retornar"));
+                        option = Integer.parseInt(JOptionPane.showInputDialog("__________[ OWNCARE 💊]__________  \n\n 1- Cadastrar medicamento\n 2- Listar seus medicamentos \n 3- Abrir pdf Rename \n 4- Retornar"));
                         if (option == 1) {
                             med.cadastramentoMed();
                         }
@@ -128,26 +148,6 @@ public class Program {
                     break;
                 
                 case 5:
-                    JOptionPane.showMessageDialog(null, "Intruções OwnCare: \n\n"
-                            + "VACINA:\n"
-                            + "-Lista todas as vacinas, com base no site do SUS, que uma criança, adolescente ou adulto, devem tomar.\n\n"
-                            + "FITNESS:\n"
-                            + "-Mostra o consumo diário de água de acordo com o seu peso;\n"
-                            + "-Mostra uma biblioteca nutricional com base no seu tipo de biotipo (Ectomorfo, Mesomorfo, Endomorfo);\n"
-                            + "-Prediz a quantidade de calorias você deve comer, incluindo a Taxa Metabólica Basal (TMB), que calcula o tanto de energia seu corpo consome em pleno funcionamento em vida. Além da manipulação percentual dos macronutrientes com base no biotipo;\n"
-                            + "-Meta calórica apresenta uma meta diária de calorias que devem ser consumidas, com base no seu biotipo.\n\n"
-                            + "MEDICAMENTO:\n"
-                            + "-Cadastra o medicamento que o usuário desejar;\n"
-                            + "-Lista os medicamentos cadastrados;\n"
-                            + "-Abre o arquivo RENAME do SUS para checagem da disponibilidade do medicamento de forma gratuita pelo Governo;\n\n"
-                            + "ROTINA:\n"
-                            + "-Cadastra a rotina que o usuário desejar;\n"
-                            + "-Lista as rotinas cadastradas;\n\n"
-                            + "EMERGÊNCIA:\n"
-                            + "-Lista todos os possíveis números de emergência mais utilizados");
-                            break;
-                            
-                case 6:
                     JOptionPane.showMessageDialog(null, bEmergencia.listBotao(bEmergencia.getList()));
                     break;
 

@@ -91,7 +91,8 @@ public class Vacina{
         
         List<Vacina> vacList = new ArrayList<>();
         
-        String path = ("C:\\Users\\limeh\\Documents\\Projetos\\NetBeans\\JavaTde\\JavaApplication18\\src\\Dados\\Vacina.txt");
+        //String path = ("C:\\Users\\limeh\\Documents\\Projetos\\NetBeans\\JavaTde\\JavaApplication18\\src\\Dados\\Vacina.txt");
+        String path = ("src\\Dados\\Vacina.txt");
 
         try ( BufferedReader br = new BufferedReader(new FileReader(path))) {
 

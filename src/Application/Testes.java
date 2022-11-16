@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import models.Entities.BotaoEmergencia;
 import models.Entities.Fitness;
 import models.Entities.Medicamento;
+import models.Entities.Rotina;
 import models.Entities.User;
 import models.Entities.Vacina;
 
@@ -20,6 +21,7 @@ public class Testes {
         Fitness fit = new Fitness();
         BotaoEmergencia botaoEmergencia = new BotaoEmergencia();
         Medicamento med = new Medicamento();
+        Rotina rot = new Rotina();
 
         user = new User("Kaike", "1234", "Lime", 18, 70.0, 180, "Ectomorfo", "Masculino");
 
@@ -30,8 +32,12 @@ public class Testes {
         //JOptionPane.showMessageDialog(null, botaoEmergencia.listBotao(botaoEmergencia.getList()));
         //vac.listVac(vac.getVac(user));
         //med.cadastramentoMed();
-        JOptionPane.showMessageDialog(null, med.listaMedicamentos());
+        //med.cadastramentoMed();
+        //JOptionPane.showMessageDialog(null, med.listaMedicamentos());
 
+        //rot.cadastramentoRotina();
+        //JOptionPane.showMessageDialog(null, rot.listaRotina());
+        
     }
 
 }
